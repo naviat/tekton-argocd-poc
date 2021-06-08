@@ -1,0 +1,34 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: products-ci-pipelinerun
+  namespace: cicd
+spec:
+  pipelineRef:
+    name: example-ci-pipeline
+  serviceAccountName: git-push-service-account
+  params:
+    - name: url
+      value: 'https://git.wes.fortna.com/haidam/tekton-argocd-poc'
+    - name: url-gitops
+      value: 'https://git.wes.fortna.com/haidam/tekton-argocd-poc'
+    - name: branch
+      value: master
+    - name: working-dir
+      value: './resources/application-repo/services/products'
+    - name: sonar-url
+      value: 'http://sonarqube-service:9000'
+    - name: image-name
+      value: 'localhost:5000/products'
+      #value: 'host.k3d.internal:5000/products'
+    - name: deployments-dir
+      value: '/resources/gitops-repo/services/products'
+    - name: deployment-file
+      value: 'products.yaml'
+  workspaces:
+    - name: maven-settings
+      configMap:
+        name: maven-settings
+    - name: ws
+      persistentVolumeClaim:
+        claimName: shared-workspace

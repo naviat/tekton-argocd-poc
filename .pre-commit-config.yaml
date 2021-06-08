@@ -1,0 +1,18 @@
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.0.1
+  hooks:
+    - id: trailing-whitespace
+- repo: https://github.com/prettier/prettier
+  rev: v2.3.0
+  hooks:
+    - id: prettier
+- repo: https://github.com/Agilicus/pre-commit-hook-k8svalidate.git
+  rev: v0.0.6
+  hooks:
+    - id: k8svalidate
+      args: [--exclude, '**/*.yaml']
+      files: .yaml$
+# - repo: https://github.com/ansible/ansible-lint
+#   rev: v4.2.0rc1
+#   hooks:
+#     - id: ansible-lint

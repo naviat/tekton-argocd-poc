@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  annotations:
+    managed-by: argocd.argoproj.io
+  name: repo-gitops
+  namespace: argocd
+type: Opaque
+stringData:
+  username: tekton
+  password: b7022973423381de3d9396a4fe4c1ff00e70a18d
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: cicd
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  repositories: |
+    - url: https://git.wes.fortna.com/haidam/tekton-argocd-poc
+      passwordSecret:
+        name: repo-gitops
+        key: password
+      usernameSecret:
+        name: repo-gitops
+        key: username
