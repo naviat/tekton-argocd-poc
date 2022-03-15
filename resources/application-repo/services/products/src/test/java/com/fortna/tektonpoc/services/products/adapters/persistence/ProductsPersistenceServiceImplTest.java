@@ -1,7 +1,7 @@
-package com.fortna.tektonpoc.services.products.adapters.persistence;
+package com.vnds.tektonpoc.services.products.adapters.persistence;
 
-import com.fortna.tektonpoc.services.products.business.model.Product;
-import com.fortna.tektonpoc.services.products.business.ports.persistence.ProductsPersistenceService;
+import com.vnds.tektonpoc.services.products.business.model.Product;
+import com.vnds.tektonpoc.services.products.business.ports.persistence.ProductsPersistenceService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

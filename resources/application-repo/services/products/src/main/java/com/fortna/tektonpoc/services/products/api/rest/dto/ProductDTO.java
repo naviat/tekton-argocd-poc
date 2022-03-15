@@ -1,4 +1,4 @@
-package com.fortna.tektonpoc.services.products.api.rest.dto;
+package com.vnds.tektonpoc.services.products.api.rest.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

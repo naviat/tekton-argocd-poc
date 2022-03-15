@@ -1,8 +1,8 @@
-package com.fortna.tektonpoc.services.products.api.rest;
+package com.vnds.tektonpoc.services.products.api.rest;
 
-import com.fortna.tektonpoc.services.products.api.rest.dto.ProductDTO;
-import com.fortna.tektonpoc.services.products.business.ProductsService;
-import com.fortna.tektonpoc.services.products.business.model.Product;
+import com.vnds.tektonpoc.services.products.api.rest.dto.ProductDTO;
+import com.vnds.tektonpoc.services.products.business.ProductsService;
+import com.vnds.tektonpoc.services.products.business.model.Product;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

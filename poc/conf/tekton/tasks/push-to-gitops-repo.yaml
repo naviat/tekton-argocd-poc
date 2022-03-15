@@ -13,13 +13,13 @@ spec:
     - name: commit
       description: commit
   steps:
-   - name: push-changes-gitops
-     image: alpine/git:v2.26.2
-     script: |
+    - name: push-changes-gitops
+      image: alpine/git:v2.26.2
+      script: |
         #!/bin/sh
         set -e
 
-        git config --global user.email "haidam@fortna.com"
+        git config --global user.email "haidv.ict@gmail.com"
         git config --global user.name "Hai Dam"
 
         git clone -b master $(params.url-gitops) gitops

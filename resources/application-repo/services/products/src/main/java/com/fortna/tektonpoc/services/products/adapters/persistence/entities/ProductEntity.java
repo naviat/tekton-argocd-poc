@@ -1,4 +1,4 @@
-package com.fortna.tektonpoc.services.products.adapters.persistence.entities;
+package com.vnds.tektonpoc.services.products.adapters.persistence.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 @Getter
 @NoArgsConstructor
-@Table(name="products")
+@Table(name = "products")
 public class ProductEntity {
 
     @Id
@@ -19,10 +19,7 @@ public class ProductEntity {
     private double price;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "labels_products",
-            joinColumns = { @JoinColumn(name = "product_id") },
-            inverseJoinColumns = { @JoinColumn(name = "label_id") }
-    )
+    @JoinTable(name = "labels_products", joinColumns = { @JoinColumn(name = "product_id") }, inverseJoinColumns = {
+            @JoinColumn(name = "label_id") })
     private Set<LabelEntity> labels;
 }

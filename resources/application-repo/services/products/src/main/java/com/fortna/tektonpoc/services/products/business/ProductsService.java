@@ -1,7 +1,7 @@
-package com.fortna.tektonpoc.services.products.business;
+package com.vnds.tektonpoc.services.products.business;
 
-import com.fortna.tektonpoc.services.products.business.ports.persistence.ProductsPersistenceService;
-import com.fortna.tektonpoc.services.products.business.model.Product;
+import com.vnds.tektonpoc.services.products.business.ports.persistence.ProductsPersistenceService;
+import com.vnds.tektonpoc.services.products.business.model.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

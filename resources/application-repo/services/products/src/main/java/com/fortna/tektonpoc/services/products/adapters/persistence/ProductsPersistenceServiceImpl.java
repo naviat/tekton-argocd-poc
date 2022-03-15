@@ -1,9 +1,9 @@
-package com.fortna.tektonpoc.services.products.adapters.persistence;
+package com.vnds.tektonpoc.services.products.adapters.persistence;
 
-import com.fortna.tektonpoc.services.products.adapters.persistence.entities.ProductEntity;
-import com.fortna.tektonpoc.services.products.adapters.persistence.repository.ProductsRepository;
-import com.fortna.tektonpoc.services.products.business.ports.persistence.ProductsPersistenceService;
-import com.fortna.tektonpoc.services.products.business.model.Product;
+import com.vnds.tektonpoc.services.products.adapters.persistence.entities.ProductEntity;
+import com.vnds.tektonpoc.services.products.adapters.persistence.repository.ProductsRepository;
+import com.vnds.tektonpoc.services.products.business.ports.persistence.ProductsPersistenceService;
+import com.vnds.tektonpoc.services.products.business.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

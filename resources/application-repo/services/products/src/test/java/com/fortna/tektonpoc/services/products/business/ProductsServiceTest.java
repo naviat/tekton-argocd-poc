@@ -1,6 +1,6 @@
-package com.fortna.tektonpoc.services.products.business;
+package com.vnds.tektonpoc.services.products.business;
 
-import com.fortna.tektonpoc.services.products.business.model.Product;
+import com.vnds.tektonpoc.services.products.business.model.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.fortna.tektonpoc.services.products.adapters.persistence.entities;
+package com.vnds.tektonpoc.services.products.adapters.persistence.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 @Getter
 @NoArgsConstructor
-@Table(name="labels")
+@Table(name = "labels")
 public class LabelEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,6 +1,6 @@
-package com.fortna.tektonpoc.services.products.api.rest;
+package com.vnds.tektonpoc.services.products.api.rest;
 
-import com.fortna.tektonpoc.services.products.api.rest.dto.ProductDTO;
+import com.vnds.tektonpoc.services.products.api.rest.dto.ProductDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

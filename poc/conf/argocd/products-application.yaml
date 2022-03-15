@@ -6,12 +6,12 @@ metadata:
 spec:
   destination:
     name: in-cluster
-    namespace: 'default'
-    server: ''
+    namespace: "default"
+    server: ""
   source:
     path: "./resources/gitops-repo/services/products"
     repoURL: >-
-      https://git.wes.fortna.com/haidam/tekton-argocd-poc
+      https://github.com/naviat/tekton-argocd-poc
     targetRevision: HEAD
   project: default
   syncPolicy:

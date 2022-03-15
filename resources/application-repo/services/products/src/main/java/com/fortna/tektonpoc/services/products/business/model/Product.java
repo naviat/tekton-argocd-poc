@@ -1,4 +1,4 @@
-package com.fortna.tektonpoc.services.products.business.model;
+package com.vnds.tektonpoc.services.products.business.model;
 
 import lombok.Builder;
 import lombok.Getter;

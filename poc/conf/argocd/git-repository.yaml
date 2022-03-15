@@ -20,7 +20,7 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   repositories: |
-    - url: https://git.wes.fortna.com/haidam/tekton-argocd-poc
+    - url: https://github.com/naviat/tekton-argocd-poc
       passwordSecret:
         name: repo-gitops
         key: password
