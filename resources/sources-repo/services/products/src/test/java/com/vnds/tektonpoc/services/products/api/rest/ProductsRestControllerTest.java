@@ -1,6 +1,5 @@
 package com.vnds.tektonpoc.services.products.api.rest;
 
-import com.vnds.tektonpoc.services.products.api.rest.ProductsRestController;
 import com.vnds.tektonpoc.services.products.api.rest.dto.ProductDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

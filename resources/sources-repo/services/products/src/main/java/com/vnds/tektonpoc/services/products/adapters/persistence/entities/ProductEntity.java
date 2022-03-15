@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 @Getter
 @NoArgsConstructor
-@Table(name = "products")
+@Table(name="products")
 public class ProductEntity {
 
     @Id
@@ -19,7 +19,10 @@ public class ProductEntity {
     private double price;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "labels_products", joinColumns = { @JoinColumn(name = "product_id") }, inverseJoinColumns = {
-            @JoinColumn(name = "label_id") })
+    @JoinTable(
+            name = "labels_products",
+            joinColumns = { @JoinColumn(name = "product_id") },
+            inverseJoinColumns = { @JoinColumn(name = "label_id") }
+    )
     private Set<LabelEntity> labels;
 }

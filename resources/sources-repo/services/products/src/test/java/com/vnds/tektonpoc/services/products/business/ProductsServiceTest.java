@@ -1,6 +1,5 @@
 package com.vnds.tektonpoc.services.products.business;
 
-import com.vnds.tektonpoc.services.products.business.ProductsService;
 import com.vnds.tektonpoc.services.products.business.model.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

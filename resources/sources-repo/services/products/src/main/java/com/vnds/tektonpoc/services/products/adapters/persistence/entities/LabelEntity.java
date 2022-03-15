@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 @Getter
 @NoArgsConstructor
-@Table(name = "labels")
+@Table(name="labels")
 public class LabelEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
