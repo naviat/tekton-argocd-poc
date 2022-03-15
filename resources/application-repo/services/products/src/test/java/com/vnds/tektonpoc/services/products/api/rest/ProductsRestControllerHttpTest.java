@@ -2,6 +2,7 @@ package com.vnds.tektonpoc.services.products.api.rest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.vnds.tektonpoc.services.products.api.rest.ProductsRestController;
 import com.vnds.tektonpoc.services.products.business.ProductsService;
 import com.vnds.tektonpoc.services.products.business.model.Product;
 import com.vnds.tektonpoc.services.products.api.rest.dto.ProductDTO;
