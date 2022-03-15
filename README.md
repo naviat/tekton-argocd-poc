@@ -5,7 +5,8 @@ This is a PoC to check Tekton, Argo CD and how both tools can work together foll
 ## Requirements
 To execute this PoC it's you need to have:
 
-- A Kubernetes cluster. If you don't have one, you can create a K3D one using the script create-local-cluster.sh but, obviously, you need to have installed K3D (it's included in script)
+- A Kubernetes cluster. If you don't have one, you can create a K3D one using the script `create-local-cluster.sh` but, obviously, you need to have installed K3D (it's included in script)
+    - Other option with kind (in progress)
 - Docker
 - Kubectl
 
@@ -27,7 +28,7 @@ To execute this PoC it's you need to have:
 
 ### 1) Fork
 
-The first step is to fork the repo https://git.wes.fortna.com/haidam/tekton-argocd-poc because:
+The first step is to fork the repo https://github.com/naviat/tekton-argocd-poc because:
 
 - You have to modify some files to add a token
 - You need your own repo to perform Gitops operations
