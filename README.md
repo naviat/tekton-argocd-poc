@@ -80,7 +80,7 @@ stringData:
 
 This step is optional. If you already have a cluster, perfect, but if not, you can create a local one based on K3D, just executing the script `poc/create-local-cluster.sh`. This script creates the local cluster and configure the private image registry to manage Docker images.
 
-#### 4) Setup
+### 4) Setup
 
 This step is the most important because installs and configures everything necessary in the cluster:
 
@@ -109,11 +109,13 @@ cat: /nexus-data/admin.password: No such file or directory
 command terminated with exit code 1
 ```
 
-#### 5) Explore and play
+### 5) Explore and play
 
 Once everything is installed, you can play with this project:
 
-##### Tekton Part
+>> For the first time you run pipeline, you need to login Sonarquebe, change password and disable forced user authentication, and allow anonymous users to browse projects and run analyses in your instance. To do this, log in as a system administrator, go to **Administration > Configuration > General Settings > Security**, and disable the `Force user authentication property`.
+
+#### Tekton Part
 
 Tekton dashboard could be exposed locally using this command:
 
@@ -127,9 +129,26 @@ Then, just open this url in the browser:
 http://localhost:8080/api/v1/namespaces/tekton-pipelines/services/tekton-dashboard:http/proxy/#/namespaces/cicd/pipelineruns
 ```
 
-By that link you'll access to **PipelineRuns options** and you'll see a pipeline executing:
+By that link you'll access to **PipelineRuns options** and you'll see a pipeline executing.
 
-<details>
-  <summary>Click to expand!</summary>
-  ...
-</details>
+Each stage is executed by a pod. For instance, you can execute:
+
+`kubectl get pods -n cicd -l "tekton.dev/pipelineRun=products-ci-pipelinerun"`
+
+to see how different pods are created to execute different stages.
+
+#### Argo CD Part
+
+To access to Argo CD dashboard you need to perform a port-forward:
+
+`kubectl port-forward svc/argocd-server -n argocd 9080:443`
+
+Then, just open this url in the browser:
+
+`https://localhost:9080/`
+
+I’ve set the admin user with these credentials: `admin / admin123`
+
+### 6) Delete the local cluster (optional )
+
+If you create a local cluster in step 3, there is an script to remove the local cluster. This script is `poc/delete-local-cluster.sh`

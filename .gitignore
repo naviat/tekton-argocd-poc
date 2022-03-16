@@ -4,8 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 #secret github token
-/poc/conf/argocd/git-repository.yaml
-/poc/conf/tekton/git-access/secret.yaml
+./poc/conf/argocd/git-repository.yaml
+./poc/conf/tekton/git-access/secret.yaml
 
 ### STS ###
 .apt_generated
