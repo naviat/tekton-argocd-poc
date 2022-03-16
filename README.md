@@ -152,7 +152,3 @@ I’ve set the admin user with these credentials: `admin / admin123`
 ### 6) Delete the local cluster (optional )
 
 If you create a local cluster in step 3, there is an script to remove the local cluster. This script is `poc/delete-local-cluster.sh`
-
-# CHANGELOG
-
-- Test 1
