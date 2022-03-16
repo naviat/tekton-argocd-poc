@@ -3,39 +3,40 @@
 This is a PoC to check Tekton, Argo CD and how both tools can work together following a GitOps way
 
 ## Requirements
+
 To execute this PoC it's you need to have:
 
 - A Kubernetes cluster. If you don't have one, you can create a K3D one using the script `create-local-cluster.sh` but, obviously, you need to have installed K3D (it's included in script)
-    - Other option with kind (in progress)
+  - Other option with kind (in progress)
 - Docker
 - Kubectl
 
-## PoC Structure:
+## PoC Structure
 
-* `poc`: this is the main folder. Here, you can find three scripts:
+- `poc`: this is the main folder. Here, you can find three scripts:
 
-    - `create-local-cluster.sh`: this script creates a local Kubernetes cluster based on K3D.
+  - `create-local-cluster.sh`: this script creates a local Kubernetes cluster based on K3D.
 
-    - `delete-local-cluster.sh`: this script removes the local cluster
+  - `delete-local-cluster.sh`: this script removes the local cluster
 
-    - `setup-poc.sh`: this script installs and configure everything neccessary in the cluster (Tekton, Argo CD, Nexus, Sonar, etc...)
+  - `setup-poc.sh`: this script installs and configure everything neccessary in the cluster (Tekton, Argo CD, Nexus, Sonar, etc...)
 
-* `resources`: this the folder used to manage the two repositories (code and gitops):
-    - `application-repo`: source code of the service used in this poc to test the CI/CD process
-    - `gitops_repo`: repository where Kubernetes files associated to the service to be deployed are
+- `resources`: this the folder used to manage the two repositories (code and gitops):
+  - `sources-repo`: source code of the service used in this poc to test the CI/CD process
+  - `gitops_repo`: repository where Kubernetes files associated to the service to be deployed are
 
 ## Steps
 
 ### 1) Fork
 
-The first step is to fork the repo https://github.com/naviat/tekton-argocd-poc because:
+The first step is to fork the repo <https://github.com/naviat/tekton-argocd-poc> because:
 
 - You have to modify some files to add a token
 - You need your own repo to perform Gitops operations
 
 ### 2) Add Github token
 
-It's necessary to add a Github Personal Access Token to Tekton can perform git operations, like push to gitops repo. If you need help to create this token, you can follow these instructions: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
+It's necessary to add a Github Personal Access Token to Tekton can perform git operations, like push to gitops repo. If you need help to create this token, you can follow these instructions: <https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token>
 
 > ** The token needs to be allowed with "repo" grants.
 
@@ -90,17 +91,18 @@ This step is the most important because installs and configures everything neces
 - Deploys Nexus and configure an standard instance
 - Creates the configmap associated to Maven settings.xml, ready to publish artifacts in Nexus (with user and password)
 - Installs Tekton tasks and pipelines
-    - [Git-clone](https://hub-preview.tekton.dev/detail/34) (from Tekton Hub)
-    - [Maven](https://hub-preview.tekton.dev/detail/65) (from Tekton Hub)
-    - [Buildah](https://hub-preview.tekton.dev/detail/13) (from Tekton Hub)
-    - Prepare Image (custom task: `poc/conf/tekton/tasks/prepare-image-task.yaml`)
-    - Push to GitOps repo (custom task: `poc/conf/tekton/tasks/push-to-gitops-repo.yaml`)
+  - [Git-clone](https://hub-preview.tekton.dev/detail/34) (from Tekton Hub)
+  - [Maven](https://hub-preview.tekton.dev/detail/65) (from Tekton Hub)
+  - [Buildah](https://hub-preview.tekton.dev/detail/13) (from Tekton Hub)
+  - Prepare Image (custom task: `poc/conf/tekton/tasks/prepare-image-task.yaml`)
+  - Push to GitOps repo (custom task: `poc/conf/tekton/tasks/push-to-gitops-repo.yaml`)
 - Installs Argo CD application, configured to check changes in gitops repository (`resources/gitops_repo`)
 - Update Argo CD password
 
 > **Be patient**: The process takes some minutes.
 
 > **This message isn't an error** It just waiting for to Nexus admin password created when the container starts. When the Nexus container starts, at some moment, it creates a file containing the default password.
+
 ```sh
 Configuring settings.xml (MAVEN) to work with Nexus
 cat: /nexus-data/admin.password: No such file or directory
@@ -112,6 +114,7 @@ command terminated with exit code 1
 Once everything is installed, you can play with this project:
 
 ##### Tekton Part
+
 Tekton dashboard could be exposed locally using this command:
 
 ```sh
@@ -125,7 +128,6 @@ http://localhost:8080/api/v1/namespaces/tekton-pipelines/services/tekton-dashboa
 ```
 
 By that link you'll access to **PipelineRuns options** and you'll see a pipeline executing:
-
 
 <details>
   <summary>Click to expand!</summary>

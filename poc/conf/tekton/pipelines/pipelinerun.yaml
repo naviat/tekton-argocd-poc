@@ -15,12 +15,12 @@ spec:
     - name: branch
       value: master
     - name: working-dir
-      value: "./resources/application-repo/services/products"
+      value: "./resources/sources-repo/services/products"
     - name: sonar-url
       value: "http://sonarqube-service:9000"
     - name: image-name
-      value: "localhost:5090/products"
-      #value: 'host.k3d.internal:5090/products'
+      #value: "localhost:5090/products"
+      value: "host.k3d.internal:5090/products"
     - name: deployments-dir
       value: "/resources/gitops-repo/services/products"
     - name: deployment-file
