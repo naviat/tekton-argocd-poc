@@ -8,9 +8,9 @@ spec:
   selector:
     app: sonarqube
   ports:
-  - protocol: TCP
-    port: 9000
-    targetPort: 9000
+    - protocol: TCP
+      port: 9000
+      targetPort: 9000
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -20,7 +20,6 @@ metadata:
   name: sonarqube
   namespace: cicd
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: sonarqube
@@ -31,4 +30,4 @@ spec:
     spec:
       containers:
         - name: sonarqube
-          image: sonarqube:lts
+          image: koolwithk/sonarqube-arm:9.2.4-community

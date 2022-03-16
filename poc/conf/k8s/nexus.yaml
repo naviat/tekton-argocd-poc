@@ -27,14 +27,20 @@ spec:
     spec:
       containers:
         - name: nexus
-          image: docker.io/sonatype/nexus3
+          image: klo2k/nexus3
           ports:
             - containerPort: 8081
               name: 8081-tcp
+          resources:
+            limits:
+              memory: "4Gi"
+              cpu: "1000m"
+            requests:
+              memory: "2Gi"
+              cpu: "500m"
           volumeMounts:
             - name: nexus-data
               mountPath: /nexus-data
       volumes:
         - name: nexus-data
           emptyDir: {}
-

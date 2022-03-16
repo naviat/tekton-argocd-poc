@@ -15,7 +15,7 @@ spec:
     - name: branch
       value: master
     - name: working-dir
-      value: "./resources/application-repo/services/products"
+      value: "./resources/sources-repo/services/products"
     - name: sonar-url
       value: "http://sonarqube-service:9000"
     - name: image-name

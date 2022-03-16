@@ -8,7 +8,7 @@ metadata:
 type: Opaque
 stringData:
   username: tekton
-  password: b7022973423381de3d9396a4fe4c1ff00e70a18d
+  password: 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
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -25,5 +25,5 @@ data:
         name: repo-gitops
         key: password
       usernameSecret:
-        name: repo-gitops
+        name: repo-gitreops
         key: username
