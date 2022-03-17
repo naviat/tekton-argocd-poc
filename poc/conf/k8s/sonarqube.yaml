@@ -30,4 +30,4 @@ spec:
     spec:
       containers:
         - name: sonarqube
-          image: koolwithk/sonarqube-arm:9.2.4-community
+          image: naviat/sonarqube-arm:9.2.4-community

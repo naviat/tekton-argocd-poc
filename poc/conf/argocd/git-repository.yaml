@@ -8,7 +8,7 @@ metadata:
 type: Opaque
 stringData:
   username: tekton
-  password: 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
+  password: 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
 ---
 apiVersion: v1
 kind: ConfigMap
